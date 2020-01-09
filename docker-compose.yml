@@ -4,7 +4,7 @@ services:
 
 
   iptv:
-    image: <imagename>:latest
+    image: chasx003/hls-xmltv:latest
     container_name: iptv
     ports:
       - "80:80"
