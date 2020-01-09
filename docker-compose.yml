@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+
+
+  iptv:
+    image: <imagename>:latest
+    container_name: iptv
+    ports:
+      - "80:80"
+    tmpfs:
+      - /tmp
+      - /var/www/html/streams:size=512M
+    environment:
+      - XMLTV_HTTP_DIR=http://192.168.117.100:11180/xmltv
+      - STREAM_HTTP_DIR=http://192.168.117.100:11180/streams
+      - M3U_HTTP_DIR=http://192.168.117.100:11180
+      - CHANNELS_DIR=/media
+    volumes:
+      - /path/to/channel/list:/opt/HLS_XMLTV/concat_lists
+      - /path/to/docker_example_config.cfg:/opt/HLS_XMLTV/config.cfg
+      - "/mnt/docker/transmission/data/Torrents/TV\ Shows:/media"
+      
