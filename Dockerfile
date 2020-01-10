@@ -131,6 +131,7 @@ FROM alpine:3.8
 RUN apk add --update --no-cache \
   ca-certificates \
   coreutils \
+  ncurses \
   procps \
   bash \
   python3 \
